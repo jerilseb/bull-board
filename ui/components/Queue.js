@@ -60,7 +60,7 @@ const fields = {
   paused: ['id', 'timestamps', 'attempts', 'data', 'opts'],
   active: ['id', 'timestamps', 'progress', 'attempts', 'data', 'opts'],
   waiting: ['id', 'timestamps', 'data', 'opts'],
-  failed: ['id', 'failedReason', 'timestamps', 'progress', 'attempts', 'retry'],
+  failed: ['id', 'failedReason', 'timestamps', 'data', 'attempts', 'retry'],
 }
 
 function PlusIcon({ width = 18 }) {
@@ -138,16 +138,16 @@ const fieldComponents = {
   timestamps: ({ job }) => {
     return (
       <div className="timestamps">
-        <div>
+        <div title="Added at">
           <PlusIcon /> <TS ts={job.timestamp} />
         </div>
         {job.processedOn && (
-          <div>
+          <div title="Processed at">
             <PlayIcon /> <TS ts={job.processedOn} prev={job.timestamp} />
           </div>
         )}
         {job.finishedOn && (
-          <div>
+          <div title="Finished at">
             <CheckIcon /> <TS ts={job.finishedOn} prev={job.processedOn} />
           </div>
         )}
