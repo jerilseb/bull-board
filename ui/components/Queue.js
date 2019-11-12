@@ -54,13 +54,13 @@ const statuses = [
 ]
 
 const fields = {
-  latest: ['id', 'timestamps', 'progress', 'attempts', 'data', 'opts'],
-  completed: ['id', 'timestamps', 'progress', 'attempts', 'data', 'opts'],
-  delayed: ['id', 'timestamps', 'attempts', 'delay', 'data', 'opts'],
-  paused: ['id', 'timestamps', 'attempts', 'data', 'opts'],
-  active: ['id', 'timestamps', 'progress', 'attempts', 'data', 'opts'],
-  waiting: ['id', 'timestamps', 'data', 'opts'],
-  failed: ['id', 'failedReason', 'timestamps', 'data', 'attempts', 'retry'],
+  latest: ['id', 'data', 'timestamps', 'progress', 'opts'],
+  completed: ['id', 'data', 'timestamps', 'progress',  'opts'],
+  delayed: ['id', 'data', 'timestamps', 'delay', 'opts'],
+  paused: ['id', 'data', 'timestamps', 'attempts', 'opts'],
+  active: ['id', 'data', 'timestamps', 'progress', 'opts'],
+  waiting: ['id', 'data', 'timestamps', 'opts'],
+  failed: ['id', 'data', 'failedReason', 'timestamps', 'attempts', 'retry'],
 }
 
 function PlusIcon({ width = 18 }) {
@@ -138,16 +138,16 @@ const fieldComponents = {
   timestamps: ({ job }) => {
     return (
       <div className="timestamps">
-        <div title="Added at">
+        <div title="Job added at">
           <PlusIcon /> <TS ts={job.timestamp} />
         </div>
         {job.processedOn && (
-          <div title="Processed at">
+          <div title="Processing started at">
             <PlayIcon /> <TS ts={job.processedOn} prev={job.timestamp} />
           </div>
         )}
         {job.finishedOn && (
-          <div title="Finished at">
+          <div title="Job finished at">
             <CheckIcon /> <TS ts={job.finishedOn} prev={job.processedOn} />
           </div>
         )}
