@@ -58,7 +58,7 @@ module.exports = async function getDataForQeues({ queues, query = {} }) {
       let jobs = []
       if (name) {
         const status = query[name] === 'latest' ? statuses : query[name]
-        jobs = await queue.getJobs(status, 0, 10)
+        jobs = await queue.getJobs(status, 0, 20)
       }
 
       return {
