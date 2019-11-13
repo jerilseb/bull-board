@@ -300,12 +300,12 @@ export default function Queue({
       </div>
       {selectedStatus && (
         <>
-          <QueueActions
+          {/* <QueueActions
             retryAll={retryAll}
             cleanAll={cleanAll}
             queue={queue}
             status={selectedStatus}
-          />
+          /> */}
           <Jobs retryJob={retryJob} queue={queue} status={selectedStatus} />
         </>
       )}
