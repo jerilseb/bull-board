@@ -286,7 +286,7 @@ export default function Queue({
 }) {
   return (
     <section>
-      <h3>{queue.name}</h3>
+      <h3>Jobs</h3>
       <div className="menu-list">
         {statuses.map(status => (
           <MenuItem
