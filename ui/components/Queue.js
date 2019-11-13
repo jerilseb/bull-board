@@ -11,8 +11,8 @@ function formatDate(ts) {
   }
 
   return getYear(ts) === getYear(today)
-    ? format(ts, 'MM/dd HH:mm:ss')
-    : format(ts, 'MM/dd/yyyy HH:mm:ss')
+    ? format(ts, 'dd/MM HH:mm:ss')
+    : format(ts, 'dd/MM/yyyy HH:mm:ss')
 }
 
 function TS({ ts, prev }) {
