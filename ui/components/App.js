@@ -22,7 +22,7 @@ export default function App({ basePath }) {
           'Loading...'
         ) : (
           <>
-            <RedisStats stats={state.data.stats} />
+            {/* <RedisStats stats={state.data.stats} /> */}
             {state.data.queues.map(queue => (
               <Queue
                 queue={queue}
