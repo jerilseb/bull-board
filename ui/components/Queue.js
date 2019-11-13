@@ -7,7 +7,7 @@ const today = new Date()
 
 function formatDate(ts) {
   if (isToday(ts)) {
-    return format(ts, 'HH:mm:ss')
+    return 'Today ' + format(ts, 'HH:mm:ss')
   }
 
   return getYear(ts) === getYear(today)
